@@ -1,0 +1,13 @@
+{
+  "extends": ["plugin:storybook/recommended", "next/core-web-vitals"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [["^react"], ["^@?\\w"], ["@/(.*)"], ["^[./]"]]
+      }
+    ],
+    "storybook/prefer-pascal-case": "off"
+  }
+}

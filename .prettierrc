@@ -1,0 +1,15 @@
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": false,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.config.ts",
+      "options": {
+        "printWidth": 80
+      }
+    }
+  ]
+}
