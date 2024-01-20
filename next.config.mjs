@@ -1,11 +1,14 @@
 import mdx from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
+const basePath = process.env.GITHUB_PAGES ? '/next-ssg' : ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  assetPrefix: process.env.GITHUB_PAGES ? '/next-ssg' : '',
+  assetPrefix: basePath,
+  basePath,
   images: {
     unoptimized: true,
   },
