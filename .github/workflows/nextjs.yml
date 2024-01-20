@@ -30,7 +30,7 @@ jobs:
           submodules: recursive
 
       - name: Update submodule
-        run: git submodule update --recursive
+        run: git submodule update --remote
 
       - name: Setup Node
         uses: actions/setup-node@v4
