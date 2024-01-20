@@ -29,6 +29,9 @@ jobs:
           ssh-key: ${{ secrets.SUBMODULE_PRIVATE_KEY }}
           submodules: recursive
 
+      - name: Update submodule
+        run: git submodule update --recursive
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -67,7 +70,6 @@ jobs:
         with:
           path: ./out
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
