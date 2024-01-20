@@ -1,0 +1,3 @@
+[submodule "_posts/blog"]
+	path = _posts/blog
+	url = https://github.com/phx13suns/training.git

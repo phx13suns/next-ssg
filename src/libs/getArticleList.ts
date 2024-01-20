@@ -3,6 +3,7 @@ import fs from 'fs'
 const listMdFiles = (dir: string): string[] =>
   fs
     .readdirSync(dir, { withFileTypes: true })
+    .filter(dirent => dirent.name[0] !== '.')
     .flatMap(dirent =>
       dirent.isFile() ? [`${dir}/${dirent.name}`.replace(/\.mdx?$/, '')] : listMdFiles(`${dir}/${dirent.name}`)
     )

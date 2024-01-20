@@ -25,6 +25,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.SUBMODULE_PRIVATE_KEY }}
+          submodules: recursive
 
       - name: Setup Node
         uses: actions/setup-node@v4
