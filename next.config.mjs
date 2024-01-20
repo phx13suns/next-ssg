@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  assetPrefix: '',
+  assetPrefix: process.env.GITHUB_PAGES ? '/next-ssg' : '',
   images: {
     unoptimized: true,
   },
