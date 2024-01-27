@@ -24,20 +24,21 @@ export const metadata = {
 
 ## このサイトについて
 
-Next.js を使ってブログを作成したくなったので、ひな形としてシンプルなサイトを GitHub Pages に公開することにしました。
+Next.js を使ってブログを作成したくなったので、雛形としてシンプルなサイトを GitHub Pages に公開することにしました。
 このブログではコーディングの備忘録を兼ねて技術的な情報を発信していきます。
 なるべく最小構成にしたかったので、コンテンツ管理には DB を使わず Git-based な SSG サイト構成としました。
-また、Markdown より MDX のほうが React との相性が良さそうなので MDX を利用して記事を書いています。
+また、Markdown より MDX のほうが React との相性が良さそうなので MDX から記事を生成しています。
 
-このサイトのソースコードは [GitHub](https://github.com/phx13suns/next-ssg) にて公開しています。
+このサイトのソースコードは [GitHub リポジトリ](https://github.com/phx13suns/next-ssg) にて公開中です。
 
 ### システム構成
 
+- Node.js {packageJson.engines.node.replace('^', '')}
 - Next.js {packageJson.dependencies.next}
   - App Router
   - Static Exports
   - @next/mdx
-- React 18
+- React {packageJson.dependencies.react.replace('^', '')}
 - Tailwind CSS
 - daisy UI
 - GitHub Pages
