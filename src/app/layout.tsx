@@ -16,9 +16,9 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="ja">
+    <html lang="ja" data-theme="cupcake">
       <body>
-        <div className="container mx-auto">{children}</div>
+        <div className="mx-auto max-w-[1200px]">{children}</div>
       </body>
     </html>
   )

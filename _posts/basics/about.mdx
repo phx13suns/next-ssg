@@ -1,6 +1,44 @@
+import { Image } from '@/components/image'
+
+import packageJson from '/package'
+import iconSrc from '/images/icon.png'
+
 export const metadata = {
   title: 'About',
-  date: '2023-12-20',
+  date: '2024-01-21',
 }
 
-## 見出し 2
+## プロフィール
+
+<div className="flex flex-col items-center">
+  <Image src={iconSrc} priority="true" alt="GitHub avatar" width="150" height="150" className="rounded-full" />
+  **phx13suns**
+</div>
+
+<dl>
+  <dt>職業</dt>
+  <dd>Webエンジニア（サラリーマン）</dd>
+  <dt>GitHub アカウント</dt>
+  <dd>[https://github.com/phx13suns](https://github.com/phx13suns)</dd>
+</dl>
+
+## このサイトについて
+
+Next.js を使ってブログを作成したくなったので、ひな形としてシンプルなサイトを GitHub Pages に公開することにしました。
+このブログではコーディングの備忘録を兼ねて技術的な情報を発信していきます。
+なるべく最小構成にしたかったので、コンテンツ管理には DB を使わず Git-based な SSG サイト構成としました。
+また、Markdown より MDX のほうが React との相性が良さそうなので MDX を利用して記事を書いています。
+
+このサイトのソースコードは [GitHub](https://github.com/phx13suns/next-ssg) にて公開しています。
+
+### システム構成
+
+- Next.js {packageJson.dependencies.next}
+  - App Router
+  - Static Exports
+  - @next/mdx
+- React 18
+- Tailwind CSS
+- daisy UI
+- GitHub Pages
+- GitHub Actions
