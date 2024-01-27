@@ -17,7 +17,7 @@ export const Profile: React.FC = () => {
         </Link>
         <ul className="flex mt-1 gap-x-1">
           <li>
-            <a href="https://github.com/phx13suns">
+            <a href="https://github.com/phx13suns" target="_blank" rel="noopener noreferrer">
               <IoLogoGithub role="graphics-symbol" title="GitHub" size={24} />
             </a>
           </li>
