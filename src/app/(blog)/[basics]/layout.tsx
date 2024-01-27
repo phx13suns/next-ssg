@@ -1,5 +1,5 @@
-import { ArticleHeader } from '@/components/articleHeader'
 import { Breadcrumbs } from '@/components/breadcrumbs'
+import { HeaderTitle } from '@/components/headerTitle'
 
 import { getMdxMetadata } from './mdx'
 import { Props as PageProps } from './page'
@@ -16,7 +16,7 @@ export default async function ArticleLayout({ children, params }: Props) {
     <main className="py-2 px-4 md:px-10">
       <header className="mb-4">
         <Breadcrumbs items={[{ name: meta.title }]} />
-        <ArticleHeader title={meta.title} publishedDate={meta.date} />
+        <HeaderTitle title={meta.title} publishedDate={meta.date} />
       </header>
       <article className="prose prose-lg max-w-none">{children}</article>
     </main>
