@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
-import { articlesPerPage } from '@/constants/blog'
+import { Category } from '@/components/category'
+import { articlesPerPage, paginationLength } from '@/constants/blog'
 import { getArticleSlug, getPagerRootSlug, getPagerSlug } from '@/libs/getArticleList'
 
 import { BASE_PATH, getMdxContent, getMdxMetadata, POSTS_DIR } from './mdx'
@@ -84,14 +85,18 @@ export default async function Entry({ params }: Props) {
         currentPage,
         articleCount,
         articlesPerPage,
-        maxDisplayCount: 5,
+        maxDisplayCount: paginationLength,
       },
     }
 
-    return <p>category</p>
+    return <Category {...categoryProps} />
   }
 
   const MdxContent = await getMdxContent(params.slug)
 
-  return <MdxContent />
+  return (
+    <article className="prose prose-lg max-w-none">
+      <MdxContent />
+    </article>
+  )
 }

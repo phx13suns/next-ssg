@@ -2,6 +2,8 @@ import { MDXContent } from 'mdx/types'
 
 import { Metadata } from '@/types/mdxMetadata'
 
+export const POSTS_DIR = './_posts/basics'
+
 const getMdx = async (name: string, type: 'default' | 'metadata' = 'default') => {
   return await import(`/_posts/basics/${name}.mdx`).then(module => module[type])
 }
