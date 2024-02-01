@@ -24,5 +24,5 @@ export const TimerBadge: React.FC<Props> = ({ children, className, publishedTime
     return null
   }
 
-  return <span className={twJoin('text-xs bg-secondary px-1 rounded-ee-lg', className)}>{children}</span>
+  return <span className={twJoin('text-xs text-white bg-secondary px-1 rounded-ee-lg', className)}>{children}</span>
 }

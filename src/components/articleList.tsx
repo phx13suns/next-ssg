@@ -11,9 +11,9 @@ type Props = {
 
 export const ArticleList: React.FC<Props> = ({ articles }) => {
   return (
-    <ol className="grid place-items-center gap-4 md:grid-cols-2">
+    <ol className="grid place-items-stretch md:items-start gap-4 md:grid-cols-2">
       {articles.map(article => (
-        <li key={article.path} className="w-full">
+        <li key={article.path}>
           <ArticleCard
             path={article.path}
             title={article.metadata.title}

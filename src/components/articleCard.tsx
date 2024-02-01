@@ -41,10 +41,14 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
             </div>
           )}
           <time dateTime={date} className="absolute right-2 bottom-2 text-xs mt-auto ml-auto">
-            {date}
+            {formatDate(date)}
           </time>
         </div>
       </Link>
     </article>
   )
+}
+
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })
 }
