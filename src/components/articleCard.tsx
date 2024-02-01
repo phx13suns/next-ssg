@@ -1,6 +1,9 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
+import { TimerBadge } from '@/components/timerBadge'
+import { newArrivalDays } from '@/constants/blog'
+
 type Props = {
   path: string
   title: string
@@ -12,19 +15,19 @@ type Props = {
 export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges }) => {
   return (
     <article>
-      <Link href={path} className="flex flex-row md:flex-col bg-base-100 shadow-xl h-32 md:h-auto rounded-lg">
+      <Link
+        href={path}
+        className="relative flex flex-row md:flex-col bg-base-100 shadow-xl h-32 md:h-auto rounded-lg overflow-hidden"
+      >
         {image && (
           <figure className="relative aspect-square md:aspect-auto">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              priority
-              className="!relative object-cover rounded-l-lg md:rounded-l-none md:rounded-t-lg"
-            />
+            <Image src={image} alt={title} fill priority className="!relative object-cover" />
           </figure>
         )}
-        <div className="relative w-full flex flex-col p-2 pb-6 md:h-32">
+        <TimerBadge publishedTime={Date.parse(date)} newArrivalDays={newArrivalDays} className="absolute">
+          NEW
+        </TimerBadge>
+        <div className="relative w-full flex flex-col p-2 md:pt-3 pb-6 md:h-32">
           <div className="flex flex-col h-full justify-center md:justify-start">
             <h2 className="text-lg font-bold break-all line-clamp-3">{title}</h2>
           </div>
