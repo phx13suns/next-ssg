@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import iconSrc from '../../images/icon.png'
+import iconSrc from '../images/icon.png'
 
 export const Profile: React.FC = () => {
   return (
