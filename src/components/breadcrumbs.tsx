@@ -1,15 +1,17 @@
 import Link from 'next/link'
+import { twJoin } from 'tailwind-merge'
 
 type Props = {
   items: {
     name: string
     path?: string
   }[]
+  className?: string
 }
 
-export const Breadcrumbs: React.FC<Props> = ({ items }) => {
+export const Breadcrumbs: React.FC<Props> = ({ items, className }) => {
   return (
-    <div className="text-sm breadcrumbs">
+    <nav className={twJoin('text-sm breadcrumbs', className)}>
       <ol>
         <li>
           <Link href="/">
@@ -29,6 +31,6 @@ export const Breadcrumbs: React.FC<Props> = ({ items }) => {
           <li key={item.name}>{item.path ? <Link href={item.path}>{item.name}</Link> : item.name}</li>
         ))}
       </ol>
-    </div>
+    </nav>
   )
 }

@@ -34,7 +34,7 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
           {badges.length > 0 && (
             <div className="card-actions mt-1">
               {badges.map(badge => (
-                <div key={badge} className="badge badge-outline">
+                <div key={badge} aria-hidden="true" className="badge badge-outline">
                   {badge}
                 </div>
               ))}

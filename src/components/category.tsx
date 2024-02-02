@@ -1,8 +1,8 @@
 import { ArticleList } from '@/components/articleList'
-// import { Pagination } from '@/components/pagination'
+import { Pagination } from '@/components/pagination'
 import { Metadata } from '@/types/mdxMetadata'
 
-// import type { Props as PaginationProps } from './pagination'
+import type { Props as PaginationProps } from './pagination'
 
 type Props = {
   name: string
@@ -11,14 +11,16 @@ type Props = {
     slug: string[]
     metadata: Metadata
   }[]
-  pagination: any
+  pagination: PaginationProps
 }
 
 export const Category: React.FC<Props> = ({ articles, pagination }) => {
   return (
-    <div>
+    <>
       <ArticleList articles={articles} />
-      {/* <Pagination {...pagination} /> */}
-    </div>
+      <footer className="flex justify-center mt-4 mb-2">
+        <Pagination {...pagination} />
+      </footer>
+    </>
   )
 }

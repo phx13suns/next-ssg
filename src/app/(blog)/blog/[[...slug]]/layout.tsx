@@ -31,9 +31,9 @@ export default async function EntryLayout({ children, params }: Props) {
 
   return (
     <main className="py-2 px-4 md:px-6 lg:px-10">
-      <header className="mb-4">
-        <Breadcrumbs items={breadcrumbs} />
-        <HeaderTitle title={meta?.title || categoryName} publishedDate={meta?.date} />
+      <header className="flex flex-col mb-4">
+        <HeaderTitle title={meta?.title || categoryName} publishedDate={meta?.date} />{' '}
+        <Breadcrumbs items={breadcrumbs} className="order-first" />
       </header>
       {children}
     </main>
