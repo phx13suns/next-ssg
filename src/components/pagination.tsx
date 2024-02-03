@@ -27,7 +27,7 @@ export const Pagination: React.FC<Props> = ({ path, currentPage, articleCount, a
               className="flex items-center justify-center px-3 h-full bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
             >
               <ChevronDoubleLeftIcon
-                title="first page"
+                title="First page"
                 role="graphics-symbol"
                 aria-hidden="false"
                 className="h-4 w-4"
@@ -63,7 +63,7 @@ export const Pagination: React.FC<Props> = ({ path, currentPage, articleCount, a
               className="flex items-center justify-center px-3 h-full bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
             >
               <ChevronDoubleRightIcon
-                title="last page"
+                title="Last page"
                 role="graphics-symbol"
                 aria-hidden="false"
                 className="h-4 w-4"

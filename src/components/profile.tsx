@@ -6,14 +6,14 @@ import iconSrc from '../images/icon.png'
 export const Profile: React.FC = () => {
   return (
     <div className="flex bg-white p-4">
-      <Link href="/about" aria-label="プロフィールへ" className="rounded-full overflow-hidden">
+      <Link href="/about" aria-label="Profile" className="rounded-full overflow-hidden">
         <Image src={iconSrc} alt="GitHub avatar" width="60" height="60" aria-hidden="true" />
       </Link>
       <div className="flex flex-col ml-4">
-        <Link href="/about" className="text-lg font-bold" aria-label="プロフィールへ">
+        <Link href="/about" className="text-lg font-bold leading-none">
           phx13suns
         </Link>
-        <ul className="flex mt-1 gap-x-1">
+        <ul className="flex mt-3 gap-x-1">
           <li>
             <a
               href="https://github.com/phx13suns"

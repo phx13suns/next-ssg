@@ -16,7 +16,7 @@ export const Breadcrumbs: React.FC<Props> = ({ items, className }) => {
       <ol>
         <li>
           <Link href="/">
-            <HomeIcon title="home" role="graphics-symbol" aria-hidden="false" className="w-4 h-4" />
+            <HomeIcon title="Home" role="graphics-symbol" aria-hidden="false" className="w-4 h-4" />
           </Link>
         </li>
         {items.map(item => (
