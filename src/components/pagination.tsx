@@ -1,5 +1,6 @@
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import { twJoin } from 'tailwind-merge'
 
 export type Props = {
   path: string
@@ -25,8 +26,12 @@ export const Pagination: React.FC<Props> = ({ path, currentPage, articleCount, a
               href={`${path}/1`}
               className="flex items-center justify-center px-3 h-full bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
             >
-              <span className="sr-only">first page</span>
-              <ChevronDoubleLeftIcon className="h-4 w-4" />
+              <ChevronDoubleLeftIcon
+                title="first page"
+                role="graphics-symbol"
+                aria-hidden="false"
+                className="h-4 w-4"
+              />
             </Link>
           )}
         </li>
@@ -36,7 +41,10 @@ export const Pagination: React.FC<Props> = ({ path, currentPage, articleCount, a
             <li key={index}>
               <Link
                 href={`${path}/${index}`}
-                className="flex items-center justify-center px-3 h-full bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                className={twJoin(
+                  'flex items-center justify-center px-3 h-full border border-gray-300 hover:bg-gray-100 hover:text-gray-700',
+                  currentPage === index ? 'bg-blue-50' : 'bg-white'
+                )}
                 aria-current={currentPage === index ? 'page' : undefined}
               >
                 {index}
@@ -54,8 +62,12 @@ export const Pagination: React.FC<Props> = ({ path, currentPage, articleCount, a
               href={`${path}/${pageCount}`}
               className="flex items-center justify-center px-3 h-full bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
             >
-              <span className="sr-only">last page</span>
-              <ChevronDoubleRightIcon className="h-4 w-4" />
+              <ChevronDoubleRightIcon
+                title="last page"
+                role="graphics-symbol"
+                aria-hidden="false"
+                className="h-4 w-4"
+              />
             </Link>
           )}
         </li>
