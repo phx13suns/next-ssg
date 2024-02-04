@@ -11,7 +11,8 @@
     "start": "serve ./out",
     "lint": "next lint",
     "ts-node": "node -r @swc-node/register",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "check-bundle": "whybundled --modulesOnly .next/stats.json"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
@@ -48,6 +49,8 @@
     "storybook": "7.6.7",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "whybundled": "^2.0.0"
   }
 }

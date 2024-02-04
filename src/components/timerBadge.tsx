@@ -2,16 +2,13 @@
 
 import { useEffect, useState } from 'react'
 
-import { twJoin } from 'tailwind-merge'
-
 type Props = {
   children: React.ReactNode
-  className?: string
   publishedTime: number
   newArrivalDays: number
 }
 
-export const TimerBadge: React.FC<Props> = ({ children, className, publishedTime, newArrivalDays }) => {
+export const TimerBadge: React.FC<Props> = ({ children, publishedTime, newArrivalDays }) => {
   const [isShow, setIsShow] = useState(false)
 
   useEffect(() => {
@@ -25,7 +22,7 @@ export const TimerBadge: React.FC<Props> = ({ children, className, publishedTime
   }
 
   return (
-    <span aria-hidden="true" className={twJoin('text-xs text-white bg-secondary px-1 rounded-ee-lg', className)}>
+    <span aria-hidden="true" className="absolute text-xs text-white bg-secondary px-1 rounded-ee-lg">
       {children}
     </span>
   )

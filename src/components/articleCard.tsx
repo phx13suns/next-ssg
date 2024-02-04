@@ -24,7 +24,7 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
             <Image src={image} alt={title} fill priority className="!relative object-cover" />
           </figure>
         )}
-        <TimerBadge publishedTime={Date.parse(date)} newArrivalDays={newArrivalDays} className="absolute">
+        <TimerBadge publishedTime={Date.parse(date)} newArrivalDays={newArrivalDays}>
           NEW
         </TimerBadge>
         <div className="relative w-full flex flex-col p-2 md:pt-3 pb-6 md:h-32">
