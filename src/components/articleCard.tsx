@@ -20,8 +20,8 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
         className="relative flex flex-row md:flex-col bg-base-100 shadow-xl h-32 md:h-auto rounded-lg overflow-hidden"
       >
         {image && (
-          <figure className="relative aspect-square md:aspect-auto">
-            <Image src={image} alt={title} fill priority className="!relative object-cover" />
+          <figure className="relative aspect-square md:aspect-auto h-full">
+            <Image src={image} alt={title} fill priority className="!relative object-cover h-full" />
           </figure>
         )}
         {date ? (
