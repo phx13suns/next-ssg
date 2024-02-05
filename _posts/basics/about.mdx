@@ -1,16 +1,18 @@
 import { Image } from '@/components/image'
-import iconSrc from '@/images/icon.png'
+import identicon from '@/images/identicon.png'
 import packageJson from '/package'
 
-export const metadata = {
-  title: 'About',
+export const meta = {
+  metadata: {
+    title: 'About',
+  },
   date: '2024-01-21',
 }
 
 ## プロフィール
 
 <div className="flex flex-col items-center">
-  <Image src={iconSrc} priority="true" alt="GitHub avatar" width="150" height="150" className="rounded-full" />
+  <Image src={identicon} priority alt="GitHub avatar" width="150" height="150" className="rounded-full" />
   **phx13suns**
 </div>
 
@@ -39,6 +41,6 @@ Next.js を使ってブログを作成したくなったので、雛形として
   - @next/mdx
 - React {packageJson.dependencies.react.replace('^', '')}
 - Tailwind CSS
-- daisy UI
+- daisyUI
 - GitHub Pages
 - GitHub Actions

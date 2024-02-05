@@ -42,11 +42,8 @@ export const generateMetadata = async ({ params }: Props, parent: ResolvingMetad
     }
   }
 
-  const meta = await getMdxMetadata(params.slug)
-
-  return {
-    title: meta.title,
-  }
+  const { metadata } = await getMdxMetadata(params.slug)
+  return metadata
 }
 
 export default async function Entry({ params }: Props) {
@@ -64,8 +61,8 @@ export default async function Entry({ params }: Props) {
     const categoryArticleSlug = getArticleSlug([POSTS_DIR, ...categorySlug].join('/'))
     const categoryArticlesInfo = await Promise.all(
       categoryArticleSlug.map(async ({ slug }) => {
-        const metadata = await getMdxMetadata([...categorySlug, ...slug])
-        return { path: [BASE_PATH, ...categorySlug, ...slug].join('/'), slug, metadata }
+        const meta = await getMdxMetadata([...categorySlug, ...slug])
+        return { path: [BASE_PATH, ...categorySlug, ...slug].join('/'), slug, meta }
       })
     )
 
@@ -78,7 +75,7 @@ export default async function Entry({ params }: Props) {
     const categoryProps = {
       name: categoryName,
       articles: categoryArticlesInfo
-        .sort((a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date))
+        .sort((a, b) => Date.parse(b.meta.date ?? '0') - Date.parse(a.meta.date ?? '0'))
         .splice((currentPage - 1) * articlesPerPage, articlesPerPage),
       pagination: {
         path: [BASE_PATH, ...categorySlug].join('/'),

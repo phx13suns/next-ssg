@@ -1,6 +1,6 @@
 import { ArticleList } from '@/components/articleList'
 import { Pagination } from '@/components/pagination'
-import { Metadata } from '@/types/mdxMetadata'
+import { Meta } from '@/types/mdxMetadata'
 
 import type { Props as PaginationProps } from './pagination'
 
@@ -9,7 +9,7 @@ type Props = {
   articles: {
     path: string
     slug: string[]
-    metadata: Metadata
+    meta: Meta
   }[]
   pagination: PaginationProps
 }

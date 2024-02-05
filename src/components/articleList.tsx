@@ -1,11 +1,11 @@
 import { ArticleCard } from '@/components/articleCard'
-import { Metadata } from '@/types/mdxMetadata'
+import { Meta } from '@/types/mdxMetadata'
 
 type Props = {
   articles: {
     path: string
     slug: string[]
-    metadata: Metadata
+    meta: Meta
   }[]
 }
 
@@ -16,9 +16,9 @@ export const ArticleList: React.FC<Props> = ({ articles }) => {
         <li key={article.path}>
           <ArticleCard
             path={article.path}
-            title={article.metadata.title}
-            date={article.metadata.date}
-            image={article.metadata.image}
+            title={article.meta.metadata.title}
+            date={article.meta.date}
+            image={article.meta.image}
             badges={article.slug.slice(0, article.slug.length - 1)}
           />
         </li>

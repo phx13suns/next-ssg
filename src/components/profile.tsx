@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import iconSrc from '../images/icon.png'
+import identicon from '../images/identicon.png'
 
 export const Profile: React.FC = () => {
   return (
     <div className="flex bg-white p-4">
       <Link href="/about" aria-label="Profile" className="rounded-full overflow-hidden">
-        <Image src={iconSrc} alt="GitHub avatar" width="60" height="60" aria-hidden="true" />
+        <Image src={identicon} alt="GitHub avatar" width="60" height="60" aria-hidden="true" />
       </Link>
       <div className="flex flex-col ml-4">
         <Link href="/about" className="text-lg font-bold leading-none">

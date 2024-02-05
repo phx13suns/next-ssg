@@ -15,11 +15,8 @@ export const generateStaticParams = () => {
 }
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-  const meta = await getMdxMetadata(params.basics)
-
-  return {
-    title: meta.title,
-  }
+  const { metadata } = await getMdxMetadata(params.basics)
+  return metadata
 }
 
 export default async function Article({ params }: Props) {

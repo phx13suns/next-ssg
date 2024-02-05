@@ -10,6 +10,7 @@ const nextConfig = {
   trailingSlash: true,
   assetPrefix: basePath,
   basePath,
+  reactStrictMode: true,
   images: {
     unoptimized: true,
   },

@@ -11,9 +11,11 @@ type Props = {
 }
 
 export default async function EntryLayout({ children, params }: Props) {
-  const meta = getArticleSlug(POSTS_DIR).some(({ slug }) => JSON.stringify(slug) === JSON.stringify(params.slug))
+  const { date, metadata } = getArticleSlug(POSTS_DIR).some(
+    ({ slug }) => JSON.stringify(slug) === JSON.stringify(params.slug)
+  )
     ? await getMdxMetadata(params.slug)
-    : undefined
+    : { date: undefined, metadata: undefined }
 
   const slug = !params.slug
     ? ['1']
@@ -32,7 +34,7 @@ export default async function EntryLayout({ children, params }: Props) {
   return (
     <main className="py-2 px-4 md:px-6 lg:px-10">
       <header className="flex flex-col mb-4">
-        <HeaderTitle title={meta?.title || categoryName} publishedDate={meta?.date} />{' '}
+        <HeaderTitle title={metadata?.title || categoryName} publishedDate={date} />
         <Breadcrumbs items={breadcrumbs} className="order-first" />
       </header>
       {children}

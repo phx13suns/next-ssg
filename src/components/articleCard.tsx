@@ -7,7 +7,7 @@ import { newArrivalDays } from '@/constants/blog'
 type Props = {
   path: string
   title: string
-  date: string
+  date?: string
   image?: StaticImageData
   badges: string[]
 }
@@ -24,9 +24,11 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
             <Image src={image} alt={title} fill priority className="!relative object-cover" />
           </figure>
         )}
-        <TimerBadge publishedTime={Date.parse(date)} newArrivalDays={newArrivalDays}>
-          NEW
-        </TimerBadge>
+        {date ? (
+          <TimerBadge publishedTime={Date.parse(date)} newArrivalDays={newArrivalDays}>
+            NEW
+          </TimerBadge>
+        ) : null}
         <div className="relative w-full flex flex-col p-2 md:pt-3 pb-6 md:h-32">
           <div className="flex flex-col h-full justify-center md:justify-start">
             <h2 className="text-lg font-bold break-all line-clamp-3">{title}</h2>
@@ -40,9 +42,11 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
               ))}
             </div>
           )}
-          <time dateTime={date} className="absolute right-2 bottom-2 text-xs mt-auto ml-auto">
-            {formatDate(date)}
-          </time>
+          {date ? (
+            <time dateTime={date} className="absolute right-2 bottom-2 text-xs mt-auto ml-auto">
+              {formatDate(date)}
+            </time>
+          ) : null}
         </div>
       </Link>
     </article>
