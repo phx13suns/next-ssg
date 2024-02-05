@@ -21,7 +21,7 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
       >
         {image && (
           <figure className="relative aspect-square md:aspect-auto h-full">
-            <Image src={image} alt={title} fill priority className="!relative object-cover h-full" />
+            <Image src={image} alt={title} fill priority className="!relative object-cover" />
           </figure>
         )}
         {date ? (
