@@ -1,5 +1,7 @@
 import mdx from '@next/mdx'
+import rehypePrettyCode from 'rehype-pretty-code'
 import remarkGfm from 'remark-gfm'
+import { getHighlighter } from 'shiki'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const basePath = process.env.GITHUB_PAGES ? '/next-ssg' : ''
@@ -15,7 +17,7 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    mdxRs: true,
+    mdxRs: false,
   },
   webpack: (config, options) => {
     if (!options.dev) {
@@ -30,9 +32,16 @@ const nextConfig = {
   },
 }
 
+/** @type {import('rehype-pretty-code').Options} */
+const prettyCodeOptions = {
+  theme: 'github-dark',
+  getHighlighter,
+}
+
 const withMDX = mdx({
   options: {
     remarkPlugins: [remarkGfm],
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
   },
 })
 
