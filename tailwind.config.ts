@@ -4,10 +4,10 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{ts,tsx}',
+    './src/app/**/*.{ts,tsx}',
     './src/mdx-components.tsx',
-    './_posts/**/*.mdx',
+    './_posts/**/*.{md,mdx}',
   ],
   plugins: [typography, daisyui],
   theme: {
