@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 figure[data-rehype-pretty-code-figure] > pre {
-  @apply overflow-x-auto px-0;
+  @apply relative overflow-x-auto px-0;
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {
@@ -11,5 +11,5 @@ figure[data-rehype-pretty-code-figure] span[data-line] {
 }
 
 figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
-  @apply bg-teal-700 w-full;
+  @apply bg-teal-700;
 }
