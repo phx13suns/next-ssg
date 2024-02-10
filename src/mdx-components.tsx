@@ -22,20 +22,6 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => {
         </a>
       )
     },
-    pre: ({ children, ...props }) => {
-      const childElements = React.Children.toArray(children)
-      if (childElements.length === 1 && React.isValidElement(childElements[0]) && childElements[0].type === 'code') {
-        const newChildren = React.cloneElement(childElements[0] as React.ReactElement<{ readonly className: string }>, {
-          className: 'w-0',
-        })
-        return (
-          <pre {...props} className="overflow-x-auto">
-            {newChildren}
-          </pre>
-        )
-      }
-      return <pre {...props}>{children}</pre>
-    },
     ...components,
   }
 }

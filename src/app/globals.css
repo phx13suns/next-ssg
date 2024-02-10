@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+figure[data-rehype-pretty-code-figure] > pre {
+  @apply overflow-x-auto px-0;
+}
+
+figure[data-rehype-pretty-code-figure] span[data-line] {
+  @apply min-w-fit px-6;
+}
+
+figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
+  @apply bg-teal-700;
+}
