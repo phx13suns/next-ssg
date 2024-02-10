@@ -7,9 +7,9 @@ figure[data-rehype-pretty-code-figure] > pre {
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {
-  @apply min-w-fit px-6;
+  @apply min-w-0 px-6;
 }
 
 figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
-  @apply bg-teal-700;
+  @apply bg-teal-700 min-w-fit;
 }
