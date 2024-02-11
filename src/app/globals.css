@@ -11,7 +11,7 @@ figure[data-rehype-pretty-code-figure] > pre > code {
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {
-  @apply pl-6 pr-2;
+  @apply pl-4 pr-2;
 }
 
 figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
