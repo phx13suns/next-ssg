@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-title] {
+  @apply w-fit rounded-t px-2 text-sm underline;
+}
+
+figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-title] + pre {
+  @apply rounded-tl-none;
+}
+
 figure[data-rehype-pretty-code-figure] > pre {
-  @apply overflow-x-auto px-0;
+  @apply overflow-x-auto px-0 py-1;
 }
 
 figure[data-rehype-pretty-code-figure] > pre > code {
@@ -15,5 +23,9 @@ figure[data-rehype-pretty-code-figure] span[data-line] {
 }
 
 figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
-  @apply bg-teal-700;
+  @apply border-s-sky-400 bg-sky-700/50 border-l-4 pl-3;
+}
+
+figure[data-rehype-pretty-code-figure] mark[data-highlighted-chars] {
+  @apply bg-amber-500/50 p-1 rounded;
 }

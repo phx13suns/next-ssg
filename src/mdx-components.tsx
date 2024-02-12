@@ -22,6 +22,31 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => {
         </a>
       )
     },
+    figure: ({ children, ...props }) => {
+      if (props.hasOwnProperty('data-rehype-pretty-code-figure')) {
+        const childElements = React.Children.toArray(children)
+        if (
+          childElements.length === 2 &&
+          React.isValidElement(childElements[0]) &&
+          childElements[0].type === 'figcaption' &&
+          React.isValidElement(childElements[1]) &&
+          childElements[1].type === 'pre'
+        ) {
+          const pre = React.cloneElement(childElements[1] as React.ReactElement)
+          const shikiStyle = pre.props['style']
+          const figcaption = React.cloneElement(childElements[0] as React.ReactElement<{ readonly style: string }>, {
+            style: shikiStyle,
+          })
+          return (
+            <figure {...props}>
+              {figcaption}
+              {pre}
+            </figure>
+          )
+        }
+      }
+      return <figure {...props}>{children}</figure>
+    },
     ...components,
   }
 }
