@@ -10,12 +10,9 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => {
     a: ({ href, children }) => {
       if (href && href.startsWith('/')) {
         return <Link href={href}>{children}</Link>
-      }
-
-      if (href && href.startsWith('#')) {
+      } else if (href && href.startsWith('#')) {
         return <a href={href}>{children}</a>
       }
-
       return (
         <a href={href} target="_blank" rel="noopener noreferrer">
           {children}

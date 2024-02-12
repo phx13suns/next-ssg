@@ -15,15 +15,10 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
-            a: {
-              wordBreak: 'break-all',
-            },
-            p: {
-              wordBreak: 'break-all',
-            },
-            li: {
-              wordBreak: 'break-all',
-            },
+            a: { wordBreak: 'break-all' },
+            p: { wordBreak: 'break-all' },
+            li: { wordBreak: 'break-all' },
+            table: { width: 'fit-content' },
           },
         },
         lg: {

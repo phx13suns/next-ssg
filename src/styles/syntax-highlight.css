@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-title] {
   @apply w-fit rounded-t px-2 md:text-sm underline;
 }

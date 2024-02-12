@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
-import '@/app/globals.css'
+import '@/styles/global.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Training Logs',
-    default: 'Training Logs',
+    template: '%s | phx13suns Blog',
+    default: 'phx13suns Blog',
   },
-  description: 'Training Logs with Next.js static exports',
+  description: 'Next.jsでstatic exportsを使ったmarkdownベースのSSGサイトを構築する際のTipsを紹介するブログです',
 }
 
 type Props = {
