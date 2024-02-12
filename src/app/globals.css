@@ -7,7 +7,7 @@ figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-titl
 }
 
 figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-title] + pre {
-  @apply rounded-tl-none;
+  @apply rounded-tl-none box-content;
 }
 
 figure[data-rehype-pretty-code-figure] > pre {
