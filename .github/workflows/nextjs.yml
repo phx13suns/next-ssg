@@ -15,7 +15,6 @@ jobs:
   build:
     permissions:
       contents: read
-      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -66,7 +65,6 @@ jobs:
   deploy:
     needs: build
     permissions:
-      contents: read
       pages: write
       id-token: write
     environment:
