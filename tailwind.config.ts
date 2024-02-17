@@ -26,6 +26,7 @@ const config: Config = {
             img: {
               margin: 0,
             },
+            pre: { padding: '0.25rem 1rem' },
           },
         },
       },
