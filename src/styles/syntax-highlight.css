@@ -1,3 +1,7 @@
+pre > code {
+  @apply grid w-0;
+}
+
 figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-title] {
   @apply w-fit rounded-t px-2 md:text-sm underline;
 }
@@ -7,11 +11,7 @@ figure[data-rehype-pretty-code-figure] > figcaption[data-rehype-pretty-code-titl
 }
 
 figure[data-rehype-pretty-code-figure] > pre {
-  @apply overflow-x-auto px-0 py-1;
-}
-
-figure[data-rehype-pretty-code-figure] > pre > code {
-  @apply w-0;
+  @apply px-0 py-1;
 }
 
 figure[data-rehype-pretty-code-figure] span[data-line] {
