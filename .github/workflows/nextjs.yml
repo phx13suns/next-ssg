@@ -37,11 +37,11 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Get pnpm store directory
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
+      - name: Get pnpm store directory
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Setup pnpm cache
         uses: actions/cache@v4
