@@ -1,5 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
+import sitemapConfig from '@/../next-sitemap.config'
 import { Category } from '@/components/category'
 import { articlesPerPage, paginationLength } from '@/constants/blog'
 import { getArticleSlug, getPagerRootSlug, getPagerSlug } from '@/libs/getArticleList'
@@ -26,24 +27,38 @@ export const generateMetadata = async ({ params }: Props, parent: ResolvingMetad
     !getArticleSlug(POSTS_DIR).some(({ slug }) => JSON.stringify(slug) === JSON.stringify(params.slug)) ||
     !params.slug
   ) {
-    const categorySlug = !params.slug
-      ? []
+    const slug = !params.slug
+      ? ['1']
       : getPagerRootSlug(POSTS_DIR).some(({ slug }) => JSON.stringify(slug) === JSON.stringify(params.slug))
-      ? params.slug
-      : params.slug.slice(0, params.slug.length - 1)
+      ? [...params.slug, '1']
+      : params.slug
+    const categorySlug = slug.slice(0, slug.length - 1)
 
     const categoryName = [...BASE_PATH.split('/'), ...categorySlug][
       [...BASE_PATH.split('/'), ...categorySlug].length - 1
     ]
     const articleCount = getArticleSlug([POSTS_DIR, ...categorySlug].join('/')).length
+    const currentPage = Number(slug[slug.length - 1])
 
+    const canonical = params.slug ? [...params.slug] : []
+    if (canonical[canonical.length - 1] === '1') {
+      canonical.pop()
+    }
     return {
-      title: `${categoryName} | 記事数:${articleCount}`,
+      title: `${categoryName} | 総記事数:${articleCount} | ページ:${currentPage}`,
+      alternates: {
+        canonical: `${sitemapConfig.siteUrl}${BASE_PATH}/${canonical.length === 0 ? '' : canonical.join('/') + '/'}`,
+      },
     }
   }
 
   const { metadata } = await getMdxMetadata(params.slug)
-  return metadata
+  return {
+    ...metadata,
+    ...(typeof metadata.robots === 'object' && metadata.robots?.index === false
+      ? {}
+      : { alternates: { canonical: `${sitemapConfig.siteUrl}${BASE_PATH}/${params.slug.join('/')}/` } }),
+  }
 }
 
 export default async function Entry({ params }: Props) {
