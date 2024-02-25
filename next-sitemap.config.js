@@ -12,4 +12,4 @@ module.exports = {
   },
 }
 
-const noindexPaths = ['/rights']
+const noindexPaths = ['/privacy-policy', '/disclaimer', '/copyright', '/rights']

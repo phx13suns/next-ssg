@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer'
 import { Profile } from '@/components/profile'
 
 type Props = {
@@ -10,6 +11,7 @@ const BlogLayout = async ({ children }: Props) => {
       <div className="flex-1 bg-white">{children}</div>
       <aside className="w-full md:w-[300px] flex flex-col md:gap-y-4">
         <Profile />
+        <Footer />
       </aside>
     </div>
   )
