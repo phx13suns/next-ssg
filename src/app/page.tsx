@@ -1,5 +1,9 @@
 import Link from 'next/link'
 
+import sitemapConfig from '@/../next-sitemap.config'
+
+export const metadata = { alternates: { canonical: sitemapConfig.siteUrl + '/' } }
+
 export default function Home() {
   return (
     <main className="flex flex-col h-svh items-center justify-between p-24">

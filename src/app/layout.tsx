@@ -1,8 +1,6 @@
-import type { Metadata } from 'next'
-
 import '@/styles/global.css'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: {
     template: '%s | phx13suns Blog',
     default: 'phx13suns Blog',
