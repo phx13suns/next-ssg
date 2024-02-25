@@ -1,3 +1,5 @@
+import Script from 'next/script'
+
 import '@/styles/global.css'
 
 export const metadata = {
@@ -15,6 +17,17 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja" data-theme="cupcake">
+      <head>
+        <Script
+          src={
+            process.env.ADSENSE_ID
+              ? `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_ID}`
+              : ''
+          }
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <div className="mx-auto max-w-[1200px]">{children}</div>
       </body>
