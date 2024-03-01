@@ -17,6 +17,7 @@ export const ArticleCard: React.FC<Props> = ({ path, title, date, image, badges 
     <article>
       <Link
         href={path}
+        scroll={true}
         className="relative flex flex-row md:flex-col bg-base-100 shadow-xl h-32 md:h-auto rounded-lg overflow-hidden"
       >
         {image && (
